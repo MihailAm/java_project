@@ -3,20 +3,31 @@ package ru.mihail.spring.ispi.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, name = "email")
     private String email;
 
-    @Column(nullable = false)
-    private String passwordHash;
+    @Column(name = "password")
+    private String password;
 
-    @Column(nullable = false)
+    @Column(name = "role")
     private String role;
+
+    public Users() {}
+
+    public Users(long id, String email, String password, String role) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
 
     public Long getId() {
         return id;
@@ -34,12 +45,12 @@ public class Users {
         this.email = email;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getRole() {
