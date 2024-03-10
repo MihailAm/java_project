@@ -13,16 +13,17 @@ public class Doctor {
     @JoinColumn(name = "user_id", unique = true)
     private Users user;
 
-    @Column(nullable = false)
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(nullable = false)
+    @Column(name = "last_name")
     private String lastName;
 
     @ManyToOne
     @JoinColumn(name = "specialty_id")
     private Specialty specialty;
 
+    @Column(name = "position")
     private String position;
 
     public Long getId() {

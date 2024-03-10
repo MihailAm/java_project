@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration Form</title>
+</head>
+<body>
+<h2>Doctor Registration Form</h2>
+<form action="/api/doctor/register-doctor" method="post">
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="firstName">First Name:</label><br>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+
+    <label for="lastName">Last Name:</label><br>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+
+    <label for="specialtyId">Specialty ID:</label><br>
+    <input type="number" id="specialtyId" name="specialtyId" required><br><br>
+
+    <label for="position">Position:</label><br>
+    <input type="text" id="position" name="position" required><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

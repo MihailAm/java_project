@@ -21,4 +21,13 @@ public class UsersService {
         users.setRole("ROLE_PATIENT");
         userRepository.save(users);
     }
+
+    @Transactional
+    public void saveDoctor(Users users) {
+        users.setPassword(passwordEncoder.encode(users.getPassword()));
+        users.setRole("ROLE_DOCTOR");
+        userRepository.save(users);
+    }
+
+
 }

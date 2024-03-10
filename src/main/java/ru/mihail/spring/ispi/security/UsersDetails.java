@@ -21,7 +21,11 @@ public class UsersDetails implements UserDetails {
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
-
+//    getAuthorities() - Этот метод возвращает коллекцию объектов, представляющих разрешения (права доступа) пользователя.
+//    Arrays.stream(users.getRole().split(",")) - Здесь происходит разделение строки, содержащей роли пользователя, на отдельные роли, используя запятые в качестве разделителей. Результатом является поток (stream) строк, представляющих отдельные роли.
+//            .map(SimpleGrantedAuthority::new) - Каждая строка (роль) из потока маппится (преобразуется) в объект SimpleGrantedAuthority. Этот объект обычно представляет собой разрешение или право доступа в системе.
+//            .collect(Collectors.toList()) - Затем все объекты SimpleGrantedAuthority собираются в список.
+//Таким образом, в итоге этот метод возвращает список разрешений (GrantedAuthority), которые были извлечены из строкового представления ролей пользователя. Этот список используется для определения прав доступа пользователя в системе.
     @Override
     public String getPassword() {
         return users.getPassword();

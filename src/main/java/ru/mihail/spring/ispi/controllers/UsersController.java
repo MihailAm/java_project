@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.mihail.spring.ispi.models.Users;
 import ru.mihail.spring.ispi.services.UsersService;
 
-@RestController
+@Controller
 public class UsersController {
     private final UsersService usersService;
 
@@ -39,16 +39,10 @@ public class UsersController {
         return "You patient";
     }
 
-
-    @GetMapping("/people/new")
-    public String newPerson(@ModelAttribute("users") Users users) {return "redirect:/people/new";}
-
     @PostMapping("/new-user")
     public String create(@RequestBody Users users) {
         usersService.save(users);
         return "user is saved";
     }
-
-
 
 }
